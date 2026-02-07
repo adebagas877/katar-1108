@@ -20,14 +20,12 @@
             scroll-behavior: smooth;
         }
 
-        /* Navbar Upgrade */
         .navbar {
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.9) !important;
             transition: all 0.3s ease;
         }
 
-        /* Hero Section with Overlay */
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                         url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1920&q=80');
@@ -38,11 +36,12 @@
             padding-top: 80px;
         }
 
-        /* Card Modernization */
         .card {
             border-radius: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
+            text-decoration: none; /* Menghilangkan underline pada link card */
+            color: inherit;
         }
 
         .card:hover {
@@ -50,7 +49,6 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
         }
 
-        /* Avatar styling */
         .avatar-wrapper {
             width: 100px;
             height: 100px;
@@ -66,7 +64,6 @@
             object-fit: cover;
         }
 
-        /* Social Media Icons */
         .social-icon {
             width: 50px;
             height: 50px;
@@ -87,11 +84,13 @@
         
         .social-icon:hover { transform: scale(1.2); color: white; opacity: 0.8; }
 
-        /* Gallery Overlay Effect */
         .gallery-item {
             cursor: pointer;
             transition: 0.4s;
             filter: brightness(0.9);
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
         }
         .gallery-item:hover {
             filter: brightness(1.1);
@@ -121,11 +120,11 @@
           <a class="nav-link dropdown-toggle px-3" href="#" id="profilDrop" data-bs-toggle="dropdown">Profil</a>
           <ul class="dropdown-menu border-0 shadow">
             <li><a class="dropdown-item" href="#visimisi">Visi & Misi</a></li>
-            <li><a class="dropdown-item" href="#struktur">Struktur Organisasi</a></li>
+            <li><a class="dropdown-item" href="struktur.html">Struktur Organisasi</a></li>
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link px-3" href="#program">Program</a></li>
-        <li class="nav-item"><a class="nav-link px-3" href="#galeri">Galeri</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="galeri.html">Galeri</a></li>
         <li class="nav-item ms-lg-3"><a class="btn btn-primary rounded-pill px-4 shadow-sm" href="#interaktif">Hubungi Kami</a></li>
       </ul>
     </div>
@@ -145,129 +144,136 @@
 </header>
 
 <section id="visimisi" class="py-5 mt-5">
-  <div class="container">
-    <div class="row g-5 align-items-center">
-      <div class="col-md-6">
-        <h6 class="text-primary fw-bold letter-spacing-2">TENTANG KAMI</h6>
-        <h2 class="display-5 fw-bold mb-4">Visi & Misi Kami</h2>
-        <div class="d-flex mb-4 card border-0 bg-light p-3">
-          <div class="d-flex align-items-start">
-            <i class="bi bi-rocket-takeoff-fill text-primary me-3 fs-3"></i>
-            <div>
-                <h5 class="fw-bold">Visi</h5>
-                <p class="text-muted">Mewujudkan generasi muda yang mandiri, tangguh, berman, berkualitas, dan bertanggung jawab.</p>
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-md-6">
+          <h6 class="text-primary fw-bold letter-spacing-2">TENTANG KAMI</h6>
+          <h2 class="display-5 fw-bold mb-4">Visi & Misi Kami</h2>
+          <div class="d-flex mb-4 card border-0 bg-light p-3 shadow-none">
+            <div class="d-flex align-items-start">
+              <i class="bi bi-rocket-takeoff-fill text-primary me-3 fs-3"></i>
+              <div>
+                  <h5 class="fw-bold">Visi</h5>
+                  <p class="text-muted mb-0">Mewujudkan generasi muda yang mandiri, tangguh, berman, berkualitas, dan bertanggung jawab.</p>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex card border-0 bg-light p-3 shadow-none">
+            <div class="d-flex align-items-start">
+              <i class="bi bi-shield-check text-primary me-3 fs-3"></i>
+              <div>
+                  <h5 class="fw-bold">Misi</h5>
+                  <p class="text-muted mb-0">Menciptakan ekosistem kreatif, jiwa sosial tinggi, dan karakter kuat untuk lingkungan yang lebih baik.</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="d-flex card border-0 bg-light p-3">
-          <div class="d-flex align-items-start">
-            <i class="bi bi-shield-check text-primary me-3 fs-3"></i>
-            <div>
-                <h5 class="fw-bold">Misi</h5>
-                <p class="text-muted">Menciptakan ekosistem kreatif, jiwa sosial tinggi, dan karakter kuat untuk lingkungan yang lebih baik.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="position-relative">
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-5 shadow-lg" alt="Visi Misi">
-            <div class="position-absolute bottom-0 start-0 bg-white p-4 rounded-4 shadow-sm m-4 d-none d-lg-block">
-                <h4 class="fw-bold text-primary mb-0">100+</h4>
-                <small class="text-muted">Anggota Aktif</small>
-            </div>
+        <div class="col-md-6">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-5 shadow-lg" alt="Visi Misi">
         </div>
       </div>
     </div>
-  </div>
 </section>
 
 <section id="struktur" class="py-5 bg-light">
   <div class="container text-center">
-    <h2 class="fw-bold mb-5">Struktur Organisasi</h2>
+    <h2 class="fw-bold mb-2">Struktur Organisasi</h2>
+    <p class="text-muted mb-5">Klik pengurus untuk melihat detail profil mereka</p>
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="card p-4 border-0 shadow-sm h-100">
-          <div class="avatar-wrapper mb-3">
-            <img src="https://i.pravatar.cc/150?u=1" alt="Ketua" class="avatar-img">
-          </div>
+        <a href="struktur.html" class="card p-4 border-0 shadow-sm h-100">
+          <div class="avatar-wrapper mb-3"><img src="https://i.pravatar.cc/150?u=1" class="avatar-img"></div>
           <h5 class="fw-bold">Sekti Darmawan</h5>
           <p class="text-primary fw-bold">Ketua Umum</p>
-        </div>
+          <small class="text-muted">Klik untuk detail <i class="bi bi-chevron-right"></i></small>
+        </a>
       </div>
       <div class="col-md-4">
-        <div class="card p-4 border-0 shadow-sm h-100">
-          <div class="avatar-wrapper mb-3">
-            <img src="https://i.pravatar.cc/150?u=2" alt="Wakil" class="avatar-img">
-          </div>
+        <a href="struktur.html" class="card p-4 border-0 shadow-sm h-100">
+          <div class="avatar-wrapper mb-3"><img src="https://i.pravatar.cc/150?u=2" class="avatar-img"></div>
           <h5 class="fw-bold">Ade Bagas</h5>
           <p class="text-primary fw-bold">Wakil Ketua</p>
-        </div>
+          <small class="text-muted">Klik untuk detail <i class="bi bi-chevron-right"></i></small>
+        </a>
       </div>
       <div class="col-md-4">
-        <div class="card p-4 border-0 shadow-sm h-100">
-          <div class="avatar-wrapper mb-3">
-            <img src="https://i.pravatar.cc/150?u=3" alt="Sekretaris" class="avatar-img">
-          </div>
+        <a href="struktur.html" class="card p-4 border-0 shadow-sm h-100">
+          <div class="avatar-wrapper mb-3"><img src="https://i.pravatar.cc/150?u=3" class="avatar-img"></div>
           <h5 class="fw-bold">Siti Fatimah</h5>
           <p class="text-primary fw-bold">Sekretaris</p>
-        </div>
+          <small class="text-muted">Klik untuk detail <i class="bi bi-chevron-right"></i></small>
+        </a>
       </div>
+    </div>
+    <div class="mt-5">
+        <a href="struktur.html" class="btn btn-outline-primary rounded-pill px-5">Lihat Semua Pengurus</a>
     </div>
   </div>
 </section>
 
 <section id="program" class="py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-        <h2 class="fw-bold">Program Unggulan</h2>
-        <p class="text-muted">Inisiatif nyata untuk perubahan yang lebih baik.</p>
+    <div class="container">
+      <div class="text-center mb-5">
+          <h2 class="fw-bold">Program Unggulan</h2>
+          <p class="text-muted">Inisiatif nyata untuk perubahan yang lebih baik.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <a href="detail-program.html?p=edukasi" class="text-decoration-none h-100 d-block">
+              <div class="card program-card h-100 p-4 bg-primary text-white shadow">
+                <i class="bi bi-mortarboard fs-1 mb-3"></i>
+                <h4>Edukasi Digital</h4>
+                <p class="opacity-75">Pelatihan literasi digital dan beasiswa pemuda berprestasi.</p>
+                <small class="fw-bold">Klik untuk detail →</small>
+              </div>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="detail-program.html?p=umkm" class="text-decoration-none h-100 d-block">
+              <div class="card program-card h-100 p-4 bg-success text-white shadow">
+                <i class="bi bi-shop fs-1 mb-3"></i>
+                <h4>UMKM Kreatif</h4>
+                <p class="opacity-75">Pendampingan UMKM muda dan bazar bulanan.</p>
+                <small class="fw-bold">Klik untuk detail →</small>
+              </div>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="detail-program.html?p=green" class="text-decoration-none h-100 d-block">
+              <div class="card program-card h-100 p-4 bg-info text-white shadow">
+                <i class="bi bi-tree fs-1 mb-3"></i>
+                <h4>Green Project</h4>
+                <p class="opacity-75">Pengelolaan sampah terpadu dan penghijauan.</p>
+                <small class="fw-bold">Klik untuk detail →</small>
+              </div>
+          </a>
+        </div>
+      </div>
     </div>
-<div class="row g-4">
-  <div class="col-md-4">
-    <a href="detail-program.html?p=edukasi" class="text-decoration-none">
-        <div class="card program-card h-100 p-4 bg-primary text-white shadow">
-          <i class="bi bi-mortarboard fs-1 mb-3"></i>
-          <h4>Edukasi Digital</h4>
-          <p class="opacity-75">Pelatihan literasi digital dan beasiswa pemuda berprestasi.</p>
-          <small class="fw-bold">Klik untuk detail →</small>
-        </div>
-    </a>
-  </div>
-
-  <div class="col-md-4">
-    <a href="detail-program.html?p=umkm" class="text-decoration-none">
-        <div class="card program-card h-100 p-4 bg-success text-white shadow">
-          <i class="bi bi-shop fs-1 mb-3"></i>
-          <h4>UMKM Kreatif</h4>
-          <p class="opacity-75">Pendampingan UMKM muda dan bazar bulanan.</p>
-          <small class="fw-bold">Klik untuk detail →</small>
-        </div>
-    </a>
-  </div>
-
-  <div class="col-md-4">
-    <a href="detail-program.html?p=green" class="text-decoration-none">
-        <div class="card program-card h-100 p-4 bg-info text-white shadow">
-          <i class="bi bi-tree fs-1 mb-3"></i>
-          <h4>Green Project</h4>
-          <p class="opacity-75">Pengelolaan sampah terpadu dan penghijauan.</p>
-          <small class="fw-bold">Klik untuk detail →</small>
-        </div>
-    </a>
-  </div>
-</div>
-    </div>
-  </div>
 </section>
 
 <section id="galeri" class="py-5 bg-light">
   <div class="container text-center">
     <h2 class="fw-bold mb-5">Dokumentasi Kegiatan</h2>
     <div class="row g-3">
-      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600" class="img-fluid rounded-4 gallery-item shadow-sm"></div>
-      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600" class="img-fluid rounded-4 gallery-item shadow-sm"></div>
-      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600" class="img-fluid rounded-4 gallery-item shadow-sm"></div>
+      <div class="col-md-4">
+          <a href="galeri.html">
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600" class="img-fluid rounded-4 gallery-item shadow-sm">
+          </a>
+      </div>
+      <div class="col-md-4">
+          <a href="galeri.html">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600" class="img-fluid rounded-4 gallery-item shadow-sm">
+          </a>
+      </div>
+      <div class="col-md-4">
+          <a href="galeri.html">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600" class="img-fluid rounded-4 gallery-item shadow-sm">
+          </a>
+      </div>
+    </div>
+    <div class="mt-5">
+        <a href="galeri.html" class="btn btn-primary rounded-pill px-5 shadow-sm">Buka Galeri Selengkapnya <i class="bi bi-images ms-2"></i></a>
     </div>
   </div>
 </section>
@@ -341,17 +347,12 @@
             alert('Harap isi nama dan pesan Anda.');
             return;
         }
-
-        // Ganti nomor ini dengan nomor WA pengurus
         const phoneNumber = "628123456789"; 
-        
         const text = `Halo Admin Katar Langgar Satu!%0A%0A*Nama:* ${name}%0A*Kategori:* ${type}%0A*Pesan:* ${message}`;
         const url = `https://wa.me/${phoneNumber}?text=${text}`;
-        
         window.open(url, '_blank').focus();
     }
 
-    // Navbar scroll effect
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             document.querySelector('.navbar').classList.add('py-2', 'shadow');
