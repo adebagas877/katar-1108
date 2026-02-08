@@ -26,6 +26,8 @@
             transition: all 0.3s ease;
         }
 
+        /* --- BACKGROUND MODIFICATIONS --- */
+        
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                         url('img/wallpaper.jpg');
@@ -35,6 +37,62 @@
             min-height: 100vh;
             padding-top: 80px;
         }
+
+        #sejarah {
+            background: #f8f9fa;
+            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        #visimisi {
+             background: #f8f9fa;
+            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        #struktur {
+             background: #f8f9fa;
+            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        #struktur::before {
+             background: #f8f9fa;
+            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        #struktur .container { position: relative; z-index: 1; }
+
+        #program {
+             background: #f8f9fa;
+            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        #galeri {
+             background: #f8f9fa;
+            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        #sosmed {
+             background: #f8f9fa;
+            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        #lokasi {
+             background: #f8f9fa;
+            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        #interaktif {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('https://.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600') center/cover;
+            background-attachment: fixed;
+        }
+
+        /* --- END BACKGROUND MODIFICATIONS --- */
 
         .card {
             border-radius: 20px;
@@ -102,7 +160,6 @@
             border: none;
         }
 
-        /* Style Tambahan untuk Maps */
         .map-container {
             border-radius: 20px;
             overflow: hidden;
@@ -126,12 +183,14 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle px-3" href="#" id="profilDrop" data-bs-toggle="dropdown">Profil</a>
           <ul class="dropdown-menu border-0 shadow">
-            <li><a class="dropdown-item" href="#sejarah">Sejarah & Profil</a></li> <li><a class="dropdown-item" href="#visimisi">Visi & Misi</a></li>
-            <li><a class="dropdown-item" href="struktur.html">Struktur Organisasi</a></li>
+            <li><a class="dropdown-item" href="#sejarah">Sejarah & Profil</a></li> 
+            <li><a class="dropdown-item" href="#visimisi">Visi & Misi</a></li>
+            <li><a class="dropdown-item" href="#struktur">Struktur Organisasi</a></li>
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link px-3" href="#program">Program</a></li>
         <li class="nav-item"><a class="nav-link px-3" href="#galeri">Galeri</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="#sosmed">Sosial Media</a></li>
         <li class="nav-item ms-lg-3"><a class="btn btn-primary rounded-pill px-4 shadow-sm" href="#interaktif">Hubungi Kami</a></li>
       </ul>
     </div>
@@ -161,17 +220,16 @@
                 <h2 class="display-6 fw-bold mb-4">Mengenal Karang Taruna Langgar Satu</h2>
                 <p class="text-muted">Karang Taruna Langgar Satu adalah wadah pengembangan generasi muda yang tumbuh atas dasar kesadaran dan tanggung jawab sosial dari, oleh, dan untuk masyarakat khususnya generasi muda di wilayah kami.</p>
                 <p class="text-muted">Berdiri sejak 2026, kami telah menjadi pusat kreativitas dan pemberdayaan masyarakat, berfokus pada kegiatan sosial, ekonomi produktif, dan pelestarian budaya lokal di tengah gempuran era digital.</p>
-                <p class="text-muted">Istilah "Dharmaning Muda" bukan sekadar slogan, melainkan sebuah filosofi mendalam yang berakar dari bahasa Sanskerta dan nilai-nilai luhur kemasyarakatan di Indonesia."</p>
-                <p class="text-muted">Semboyan ini berasal dari dua kata utama: Dharma (Dharmaning): Berarti kewajiban, pengabdian, kebajikan, atau kebenaran. Dalam konteks Jawa/Sanskerta, "Dharmaning" berarti "Kewajiban utama bagi..." Muda: Merujuk pada pemuda atau generasi penerus yang memiliki energi, fisik yang kuat, dan pemikiran yang baru. adi, Dharmaning Muda secara harfiah berarti "Pengabdian Utama Sang Pemuda.</p>
+                <p class="text-muted">Semboyan ini berasal dari dua kata utama: Dharma (Dharmaning): Berarti kewajiban, pengabdian, kebajikan, atau kebenaran. Jadi, Dharmaning Muda secara harfiah berarti "Pengabdian Utama Sang Pemuda."</p>
                 <div class="row g-3 mt-2">
                     <div class="col-6">
-                        <div class="p-3 border rounded-4 text-center">
+                        <div class="p-3 border bg-white rounded-4 text-center shadow-sm">
                             <h3 class="fw-bold text-primary mb-0">20+</h3>
                             <small class="text-muted">Anggota Aktif</small>
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class="p-3 border rounded-4 text-center">
+                        <div class="p-3 border bg-white rounded-4 text-center shadow-sm">
                             <h3 class="fw-bold text-primary mb-0">5+</h3>
                             <small class="text-muted">Program Berjalan</small>
                         </div>
@@ -182,7 +240,7 @@
     </div>
 </section>
 
-<section id="visimisi" class="py-5 bg-light">
+<section id="visimisi" class="py-5">
     <div class="container">
       <div class="row g-5 align-items-center">
         <div class="col-md-6 order-2 order-md-1">
@@ -193,7 +251,7 @@
               <i class="bi bi-rocket-takeoff-fill text-primary me-3 fs-3"></i>
               <div>
                   <h5 class="fw-bold">Visi</h5>
-                  <p class="text-muted mb-0">Mewujudkan generasi muda yang mandiri, tangguh, berman, berkualitas, dan bertanggung jawab.</p>
+                  <p class="text-muted mb-0">Mewujudkan generasi muda yang mandiri, tangguh, beriman, berkualitas, dan bertanggung jawab.</p>
               </div>
             </div>
           </div>
@@ -207,8 +265,32 @@
             </div>
           </div>
         </div>
+        
         <div class="col-md-6 order-1 order-md-2">
-          <img src="img/wallpaper1.jpg" class="img-fluid rounded-5 shadow-lg" alt="Visi Misi">
+            <div id="carouselVisiMisi" class="carousel slide shadow-lg" data-bs-ride="carousel" style="border-radius: 30px; overflow: hidden;">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselVisiMisi" data-bs-slide-to="0" class="active"></button>
+                  <button type="button" data-bs-target="#carouselVisiMisi" data-bs-slide-to="1"></button>
+                  <button type="button" data-bs-target="#carouselVisiMisi" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="img/wallpaper1.jpg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Visi Misi 1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Visi Misi 2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Visi Misi 3">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselVisiMisi" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselVisiMisi" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
         </div>
       </div>
     </div>
@@ -242,12 +324,12 @@
       </div>
     </div>
     <div class="mt-5">
-        <a href="struktur.html" class="btn btn-outline-primary rounded-pill px-5">Lihat Semua Pengurus</a>
+        <a href="struktur.html" class="btn btn-primary rounded-pill px-5">Lihat Semua Pengurus</a>
     </div>
   </div>
 </section>
 
-<section id="program" class="py-5 bg-light">
+<section id="program" class="py-5">
     <div class="container">
       <div class="text-center mb-5">
           <h2 class="fw-bold">Program Unggulan</h2>
@@ -314,6 +396,7 @@
   </div>
 </section>
 
+<section id="sosmed" class="py-5"></section>
 <section class="py-5 bg-white border-top">
     <div class="container text-center">
         <h4 class="fw-bold mb-4">Terhubung Bersama Kami</h4>
@@ -326,27 +409,27 @@
     </div>
 </section>
 
-<section id="lokasi" class="py-5 bg-light">
+<section id="lokasi" class="py-5">
     <div class="container">
         <div class="row g-4 align-items-center">
             <div class="col-lg-5">
                 <h6 class="text-primary fw-bold">LOKASI KAMI</h6>
                 <h2 class="fw-bold mb-4">Sekretariat Karang Taruna</h2>
-                <div class="card border-0 shadow-sm p-4 mb-3">
+                <div class="card border-0 shadow-sm p-4 mb-3 bg-white">
                     <div class="d-flex align-items-start">
                         <i class="bi bi-geo-alt-fill text-primary fs-3 me-3"></i>
                         <div>
                             <h5 class="fw-bold mb-1">Alamat Lengkap</h5>
-                            <p class="text-muted mb-0">Jl. Raya Tanjung Barat Gg. Langgar, Kelurahan Pejaten Timur, Kecamatan Pasar Minggu, Kota Jakarta Selatan, DKI Jakarta 12510</p>
+                            <p class="text-muted mb-0">Jl. Raya Tanjung Barat Gg. Langgar, Kelurahan Pejaten Timur, DKI Jakarta 12510</p>
                         </div>
                     </div>
                 </div>
-                <div class="card border-0 shadow-sm p-4">
+                <div class="card border-0 shadow-sm p-4 bg-white">
                     <div class="d-flex align-items-start">
                         <i class="bi bi-clock-fill text-primary fs-4 me-3"></i>
                         <div>
                             <h5 class="fw-bold mb-1">Jam Operasional</h5>
-                            <p class="text-muted mb-0">Sabtu - Minggu: 10.00 - 17.00 WIB<br>(Hari kerja menyesuaikan agenda)</p>
+                            <p class="text-muted mb-0">Sabtu - Minggu: 10.00 - 17.00 WIB</p>
                         </div>
                     </div>
                 </div>
@@ -354,13 +437,8 @@
             <div class="col-lg-7">
                 <div class="map-container shadow">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.8035220198885!2d106.84170067605919!3d-6.289536161563133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f272929a0309%3A0x52a75afd73d1b9c2!2sGg.%20Langgar%201%2C%20Ps.%20Minggu%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012510!5e0!3m2!1sid!2sid!4v1770513649322!5m2!1sid!2sid" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
-                        width="100%" 
-                        height="400" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.8035221439573!2d106.83940468591182!3d-6.289536145299799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f272929a0309%3A0x52a75afd73d1b9c2!2sGg.%20Langgar%201%2C%20Ps.%20Minggu%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012510!5e0!3m2!1sid!2sid!4v1770542321486!5m2!1sid!2sid" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
+                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
             </div>
@@ -368,7 +446,7 @@
     </div>
 </section>
 
-<section id="interaktif" class="py-5 bg-dark text-white">
+<section id="interaktif" class="py-5 text-white">
   <div class="container">
     <div class="row g-5">
       <div class="col-md-5">
@@ -409,9 +487,8 @@
   </div>
 </section>
 
-
 <footer class="bg-black py-4 text-center border-top border-secondary">
-  <p class="mb-0 text-secondary">&copy; 2026 <strong>Karang Taruna Langgar Satu</strong>. Digitalizing Youth Community.</p>
+  <p class="mb-0 text-secondary">© 2026 <strong>Karang Taruna Langgar Satu</strong>. Digitalizing Youth Community.</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
