@@ -40,7 +40,7 @@
             border-radius: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
-            text-decoration: none; /* Menghilangkan underline pada link card */
+            text-decoration: none; 
             color: inherit;
         }
 
@@ -108,7 +108,7 @@
 <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
   <div class="container">
     <a class="navbar-brand fw-extrabold text-primary" href="#">
-        <img src="img/logo.png" style="height: 3em; vertical-align: middle;" alt="icon"></i> KATAR <span class="text-dark">LANGGAR SATU</span>
+        <img src="img/logo.png" style="height: 3em; vertical-align: middle;" alt="Logo"> KARANG TARUNA <span class="text-dark">LANGGAR SATU</span>
     </a>
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -119,12 +119,12 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle px-3" href="#" id="profilDrop" data-bs-toggle="dropdown">Profil</a>
           <ul class="dropdown-menu border-0 shadow">
-            <li><a class="dropdown-item" href="#visimisi">Visi & Misi</a></li>
-            <li><a class="dropdown-item" href="struktur">Struktur Organisasi</a></li>
+            <li><a class="dropdown-item" href="#sejarah">Sejarah & Profil</a></li> <li><a class="dropdown-item" href="#visimisi">Visi & Misi</a></li>
+            <li><a class="dropdown-item" href="struktur.html">Struktur Organisasi</a></li>
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link px-3" href="#program">Program</a></li>
-        <li class="nav-item"><a class="nav-link px-3" href="galeri">Galeri</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="#galeri">Galeri</a></li>
         <li class="nav-item ms-lg-3"><a class="btn btn-primary rounded-pill px-4 shadow-sm" href="#interaktif">Hubungi Kami</a></li>
       </ul>
     </div>
@@ -143,13 +143,45 @@
   </div>
 </header>
 
-<section id="visimisi" class="py-5 mt-5">
+<section id="sejarah" class="py-5 mt-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="img/logo.png" class="img-fluid rounded-5 shadow-lg" alt="Profil Karang Taruna">
+            </div>
+            <div class="col-lg-6 ps-lg-5">
+                <h6 class="text-primary fw-bold">PROFIL ORGANISASI</h6>
+                <h2 class="display-6 fw-bold mb-4">Mengenal Karang Taruna Langgar Satu</h2>
+                <p class="text-muted">Karang Taruna Langgar Satu adalah wadah pengembangan generasi muda yang tumbuh atas dasar kesadaran dan tanggung jawab sosial dari, oleh, dan untuk masyarakat khususnya generasi muda di wilayah kami.</p>
+                <p class="text-muted">Berdiri sejak 2026, kami telah menjadi pusat kreativitas dan pemberdayaan masyarakat, berfokus pada kegiatan sosial, ekonomi produktif, dan pelestarian budaya lokal di tengah gempuran era digital.</p>
+                <p class="text-muted">Istilah "Dharmaning Muda" bukan sekadar slogan, melainkan sebuah filosofi mendalam yang berakar dari bahasa Sanskerta dan nilai-nilai luhur kemasyarakatan di Indonesia."</p>
+                <p class="text-muted">Semboyan ini berasal dari dua kata utama: Dharma (Dharmaning): Berarti kewajiban, pengabdian, kebajikan, atau kebenaran. Dalam konteks Jawa/Sanskerta, "Dharmaning" berarti "Kewajiban utama bagi..." Muda: Merujuk pada pemuda atau generasi penerus yang memiliki energi, fisik yang kuat, dan pemikiran yang baru. adi, Dharmaning Muda secara harfiah berarti "Pengabdian Utama Sang Pemuda.</p>
+                <div class="row g-3 mt-2">
+                    <div class="col-6">
+                        <div class="p-3 border rounded-4 text-center">
+                            <h3 class="fw-bold text-primary mb-0">20+</h3>
+                            <small class="text-muted">Anggota Aktif</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-3 border rounded-4 text-center">
+                            <h3 class="fw-bold text-primary mb-0">5+</h3>
+                            <small class="text-muted">Program Berjalan</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="visimisi" class="py-5 bg-light">
     <div class="container">
       <div class="row g-5 align-items-center">
-        <div class="col-md-6">
-          <h6 class="text-primary fw-bold letter-spacing-2">TENTANG KAMI</h6>
+        <div class="col-md-6 order-2 order-md-1">
+          <h6 class="text-primary fw-bold">ARAH GERAK</h6>
           <h2 class="display-5 fw-bold mb-4">Visi & Misi Kami</h2>
-          <div class="d-flex mb-4 card border-0 bg-light p-3 shadow-none">
+          <div class="d-flex mb-4 card border-0 bg-white p-3 shadow-sm">
             <div class="d-flex align-items-start">
               <i class="bi bi-rocket-takeoff-fill text-primary me-3 fs-3"></i>
               <div>
@@ -158,7 +190,7 @@
               </div>
             </div>
           </div>
-          <div class="d-flex card border-0 bg-light p-3 shadow-none">
+          <div class="d-flex card border-0 bg-white p-3 shadow-sm">
             <div class="d-flex align-items-start">
               <i class="bi bi-shield-check text-primary me-3 fs-3"></i>
               <div>
@@ -168,35 +200,35 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 order-1 order-md-2">
           <img src="img/wallpaper1.jpg" class="img-fluid rounded-5 shadow-lg" alt="Visi Misi">
         </div>
       </div>
     </div>
 </section>
 
-<section id="struktur" class="py-5 bg-light">
+<section id="struktur" class="py-5">
   <div class="container text-center">
     <h2 class="fw-bold mb-2">Struktur Organisasi</h2>
     <p class="text-muted mb-5">Klik pengurus untuk melihat detail profil mereka</p>
     <div class="row g-4">
       <div class="col-md-4">
         <a href="struktur.html" class="card p-4 border-0 shadow-sm h-100">
-          <div class="avatar-wrapper mb-3"><img src="https://i.pravatar.cc/150?u=1" class="avatar-img"></div>
+          <div class="avatar-wrapper mb-3"><img src="https://i.pravatar.cc/150?u=1" class="avatar-img" alt="Ketua"></div>
           <h5 class="fw-bold">Sekti Darmawan</h5>
           <p class="text-primary fw-bold">Ketua Umum</p>
         </a>
       </div>
       <div class="col-md-4">
         <a href="struktur.html" class="card p-4 border-0 shadow-sm h-100">
-          <div class="avatar-wrapper mb-3"><img src="img/foto.jpg" class="avatar-img"></div>
+          <div class="avatar-wrapper mb-3"><img src="img/foto.jpg" class="avatar-img" alt="Wakil"></div>
           <h5 class="fw-bold">Ade Bagas</h5>
           <p class="text-primary fw-bold">Wakil Ketua</p>
         </a>
       </div>
       <div class="col-md-4">
         <a href="struktur.html" class="card p-4 border-0 shadow-sm h-100">
-          <div class="avatar-wrapper mb-3"><img src="https://i.pravatar.cc/150?u=3" class="avatar-img"></div>
+          <div class="avatar-wrapper mb-3"><img src="https://i.pravatar.cc/150?u=3" class="avatar-img" alt="Sekretaris"></div>
           <h5 class="fw-bold">Siti Fatimah</h5>
           <p class="text-primary fw-bold">Sekretaris</p>
         </a>
@@ -208,7 +240,7 @@
   </div>
 </section>
 
-<section id="program" class="py-5">
+<section id="program" class="py-5 bg-light">
     <div class="container">
       <div class="text-center mb-5">
           <h2 class="fw-bold">Program Unggulan</h2>
@@ -249,7 +281,7 @@
     </div>
 </section>
 
-<section id="galeri" class="py-5 bg-light">
+<section id="galeri" class="py-5">
   <div class="container text-center">
     <h2 class="fw-bold mb-5">Dokumentasi Kegiatan</h2>
     <div class="row g-3">
@@ -275,7 +307,7 @@
   </div>
 </section>
 
-<section class="py-5 bg-white">
+<section class="py-5 bg-white border-top">
     <div class="container text-center">
         <h4 class="fw-bold mb-4">Terhubung Bersama Kami</h4>
         <div class="d-flex justify-content-center gap-4">
