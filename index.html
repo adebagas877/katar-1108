@@ -3,235 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KATAR LANGGAR SATU - Modern Branding</title>
+    <title>KATAR LANGGAR SATU - Digital Youth Era</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root {
-            --primary-color: #0d6efd;
-            --accent-color: #6610f2;
+            --primary: #0d6efd;
+            --accent: #6610f2;
+            --gradient-1: linear-gradient(45deg, #0d6efd, #6610f2);
+            --glass: rgba(255, 255, 255, 0.85);
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
+            color: #2b2b2b;
+            overflow-x: hidden;
+            background-color: #fbfbfb;
         }
 
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+        /* --- Modern Navbar --- */
         .navbar {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.9) !important;
-            transition: all 0.3s ease;
+            backdrop-filter: blur(15px);
+            background: var(--glass) !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 15px 0;
+        }
+        .navbar.scrolled {
+            padding: 8px 0;
+            background: rgba(255, 255, 255, 0.95) !important;
         }
 
-        /* --- BACKGROUND MODIFICATIONS --- */
-        
+        /* --- Hero Section --- */
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
                         url('img/wallpaper.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             min-height: 100vh;
-            padding-top: 80px;
+            display: flex;
+            align-items: center;
+            clip-path: ellipse(150% 100% at 50% 0%);
         }
 
-        #sejarah {
-            background: #f8f9fa;
-            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
-            background-size: 30px 30px;
+        .text-gradient {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        #visimisi {
-             background: #f8f9fa;
-            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
-            background-size: 30px 30px;
+        /* --- Section Styling --- */
+        section { padding: 100px 0; }
+        
+        .dot-pattern {
+            background-image: radial-gradient(#dee2e6 1.5px, transparent 1.5px);
+            background-size: 25px 25px;
         }
 
-        #struktur {
-             background: #f8f9fa;
-            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
-            background-size: 30px 30px;
+        /* --- Cards & Glassmorphism --- */
+        .card-custom {
+            border: none;
+            border-radius: 24px;
+            background: white;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
-        #struktur::before {
-             background: #f8f9fa;
-            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
-        #struktur .container { position: relative; z-index: 1; }
-
-        #program {
-             background: #f8f9fa;
-            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
-
-        #galeri {
-             background: #f8f9fa;
-            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
-
-        #sosmed {
-             background: #f8f9fa;
-            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
-
-        #lokasi {
-             background: #f8f9fa;
-            background-image: radial-gradient(#dee2e6 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
-
-        #interaktif {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                        url('https://.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600') center/cover;
-            background-attachment: fixed;
-        }
-
-        /* --- END BACKGROUND MODIFICATIONS --- */
-
-        .card {
-            border-radius: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-            text-decoration: none; 
-            color: inherit;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+        .card-custom:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(13, 110, 253, 0.15);
         }
 
         .avatar-wrapper {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             margin: 0 auto;
             border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid var(--primary-color);
+            padding: 5px;
+            background: var(--gradient-1);
+            position: relative;
         }
-        
         .avatar-img {
             width: 100%;
             height: 100%;
+            border-radius: 50%;
             object-fit: cover;
+            border: 4px solid white;
         }
 
+        /* --- Gallery Hover --- */
+        .gallery-container { position: relative; overflow: hidden; border-radius: 20px; }
+        .gallery-item {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .gallery-container:hover .gallery-item { transform: scale(1.1); }
+
+        /* --- Social Icons Custom Colors --- */
         .social-icon {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            font-size: 1.5rem;
+            border-radius: 18px;
+            font-size: 1.6rem;
             color: white;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
-            transition: 0.3s;
         }
+        .social-icon:hover { transform: translateY(-8px) rotate(8deg); opacity: 0.9; color: white; }
         
-        .instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); }
+        .instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .facebook { background: #1877F2; }
         .youtube { background: #FF0000; }
         .tiktok { background: #000000; }
-        
-        .social-icon:hover { transform: scale(1.2); color: white; opacity: 0.8; }
 
-        .gallery-item {
-            cursor: pointer;
-            transition: 0.4s;
-            filter: brightness(0.9);
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        .gallery-item:hover {
-            filter: brightness(1.1);
-            transform: scale(1.02);
-        }
+/* --- Map Canvas --- */
+.map-wrapper {
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    /* transform: rotate(-1deg); <-- Baris ini sudah dihapus/dinonaktifkan agar tidak miring */
+}
 
-        .program-card {
-            transition: 0.3s;
-            border: none;
-        }
+        /* --- Floating Button --- */
+        .btn-modern {
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
 
-        .map-container {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            /* Tambahkan atau perbarui class ini di dalam tag <style> */
+.text-justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.section-title-line {
+    height: 3px;
+    width: 60px;
+    background: var(--gradient-1);
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
         }
     </style>
 </head>
-<body>
+<body class="dot-pattern">
 
-<nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
   <div class="container">
-    <a class="navbar-brand fw-extrabold text-primary" href="#">
-        <img src="img/logo.png" style="height: 3em; vertical-align: middle;" alt="Logo"> KATAR <span class="text-dark">LANGGAR SATU</span>
+    <a class="navbar-brand fw-bold" href="#">
+        <img src="img/logo.png" style="height: 45px;" alt="Logo" class="me-2"> 
+        <span class="text-primary">KATAR</span> <span class="text-dark">LANGGAR SATU</span>
     </a>
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
+      <span class="bi bi-list fs-1 text-primary"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item"><a class="nav-link px-3" href="#home">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link px-3 fw-600" href="#home">Beranda</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle px-3" href="#" id="profilDrop" data-bs-toggle="dropdown">Profil</a>
-          <ul class="dropdown-menu border-0 shadow">
-            <li><a class="dropdown-item" href="#sejarah">Sejarah & Profil</a></li> 
-            <li><a class="dropdown-item" href="#visimisi">Visi & Misi</a></li>
-            <li><a class="dropdown-item" href="#struktur">Struktur Organisasi</a></li>
+          <a class="nav-link dropdown-toggle px-3 fw-600" href="#" id="profilDrop" data-bs-toggle="dropdown">Profil</a>
+          <ul class="dropdown-menu border-0 shadow-lg p-3" style="border-radius: 15px;">
+            <li><a class="dropdown-item rounded-3" href="#sejarah">Sejarah & Profil</a></li> 
+            <li><a class="dropdown-item rounded-3" href="#visimisi">Visi & Misi</a></li>
+            <li><a class="dropdown-item rounded-3" href="#struktur">Struktur Organisasi</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a class="nav-link px-3" href="#program">Program</a></li>
-        <li class="nav-item"><a class="nav-link px-3" href="#galeri">Galeri</a></li>
-        <li class="nav-item"><a class="nav-link px-3" href="#sosmed">Sosial Media</a></li>
-        <li class="nav-item ms-lg-3"><a class="btn btn-primary rounded-pill px-4 shadow-sm" href="#interaktif">Hubungi Kami</a></li>
+        <li class="nav-item"><a class="nav-link px-3 fw-600" href="#program">Program</a></li>
+        <li class="nav-item"><a class="nav-link px-3 fw-600" href="#galeri">Galeri</a></li>
+        <li class="nav-item"><a class="nav-link px-3 fw-600" href="#sosmed">Media</a></li>
+        <li class="nav-item ms-lg-4"><a class="btn btn-primary btn-modern shadow" href="#interaktif">Hubungi Kami</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<header id="home" class="hero-section d-flex align-items-center">
-  <div class="container text-center text-white">
-    <span class="badge bg-primary mb-3 px-3 py-2 rounded-pill">OFFICIAL WEBSITE</span>
-    <h1 class="display-2 fw-bold mb-3">DHARMANING MUDA</h1>
-    <p class="lead mb-5 opacity-75">Membangun potensi pemuda menuju kemandirian dan kreativitas tanpa batas di era digital.</p>
+<header id="home" class="hero-section text-white">
+  <div class="container text-center" data-aos="zoom-out" data-aos-duration="1500">
+    <span class="badge bg-white text-primary mb-4 px-4 py-2 rounded-pill fw-bold shadow-lg">🚀 NEXT GENERATION</span>
+    <h1 class="display-1 fw-800 mb-4" style="letter-spacing: -2px;">DHARMANING <span class="text-primary text-gradient">MUDA</span></h1>
+    <p class="lead mb-5 opacity-75 mx-auto" style="max-width: 700px;">Membangun potensi pemuda melalui kreativitas digital dan kepedulian sosial yang nyata untuk masa depan.</p>
     <div class="d-flex justify-content-center gap-3">
-      <a href="#program" class="btn btn-primary btn-lg rounded-pill px-5">Lihat Program</a>
-      <a href="#interaktif" class="btn btn-outline-light btn-lg rounded-pill px-5">Daftar Anggota</a>
+      <a href="#program" class="btn btn-primary btn-lg btn-modern shadow-lg">Eksplorasi Program</a>
+      <a href="#interaktif" class="btn btn-outline-light btn-lg btn-modern">Gabung Anggota</a>
     </div>
   </div>
 </header>
 
-<section id="sejarah" class="py-5 mt-5">
+<section id="sejarah" class="py-5">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="img/logo.png" class="img-fluid rounded-5 shadow-lg" alt="Profil Karang Taruna">
+            <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                <div class="position-relative">
+                    <img src="img/logo.png" class="img-fluid rounded-5 shadow-lg position-relative z-1 p-4 bg-white" alt="Logo Dharmaning Muda">
+                    <div class="position-absolute bg-primary rounded-5" style="top: -20px; left: -20px; width: 100%; height: 100%; z-index: 0; opacity: 0.1;"></div>
+                </div>
             </div>
-            <div class="col-lg-6 ps-lg-5">
-                <h6 class="text-primary fw-bold">PROFIL ORGANISASI</h6>
-                <h2 class="display-6 fw-bold mb-4">Mengenal Karang Taruna Langgar Satu</h2>
-                <p class="text-muted">Karang Taruna Langgar Satu adalah wadah pengembangan generasi muda yang tumbuh atas dasar kesadaran dan tanggung jawab sosial dari, oleh, dan untuk masyarakat khususnya generasi muda di wilayah kami.</p>
-                <p class="text-muted">Berdiri sejak 2026, kami telah menjadi pusat kreativitas dan pemberdayaan masyarakat, berfokus pada kegiatan sosial, ekonomi produktif, dan pelestarian budaya lokal di tengah gempuran era digital.</p>
-                <p class="text-muted">Semboyan ini berasal dari dua kata utama: Dharma (Dharmaning): Berarti kewajiban, pengabdian, kebajikan, atau kebenaran. Jadi, Dharmaning Muda secara harfiah berarti "Pengabdian Utama Sang Pemuda."</p>
-                <div class="row g-3 mt-2">
-                    <div class="col-6">
-                        <div class="p-3 border bg-white rounded-4 text-center shadow-sm">
-                            <h3 class="fw-bold text-primary mb-0">20+</h3>
-                            <small class="text-muted">Anggota Aktif</small>
+
+            <div class="col-lg-7 ps-lg-5" data-aos="fade-left">
+                <h6 class="text-primary fw-bold text-uppercase mb-2">Our Legacy</h6>
+                <h2 class="display-5 fw-bold mb-3">Sejarah & Pengertian <br><span class="text-primary text-gradient">Dharmaning Muda</span></h2>
+                <div class="section-title-line"></div>
+                
+                <div class="text-justify mb-4">
+                    <p class="text-muted fs-5 fw-bold mb-2">Apa itu Karang Taruna?</p>
+                    <p class="text-muted">
+                        Karang Taruna adalah wadah pengembangan generasi muda yang tumbuh atas dasar kesadaran dan tanggung jawab sosial. Nama <strong>"Dharmaning Muda"</strong> diambil dari bahasa Sanskerta, di mana <em>Dharma</em> berarti pengabdian dan <em>Muda</em> merujuk pada pemuda. Secara utuh, ia melambangkan <strong>"Pengabdian Utama Sang Pemuda"</strong>.
+                    </p>
+                    
+                    <p class="text-muted fs-5 fw-bold mb-2">Perjalanan Kami</p>
+                    <p class="text-muted">
+                        Didirikan sejak tahun <strong>2026</strong>, Karang Taruna Langgar Satu telah menjadi pilar kreativitas di Pejaten Timur. Berawal dari gerakan kepemudaan lokal, kini kami bertransformasi menjadi organisasi modern yang adaptif terhadap teknologi tanpa meninggalkan nilai gotong royong.
+                    </p>
+
+                    <p class="text-muted fs-5 fw-bold mb-2">Lokasi Strategis</p>
+                    <p class="text-muted">
+                        Berpusat di <strong>Jl. Raya Tanjung Barat Gg. Langgar 1, Pejaten Timur, Pasar Minggu, Jakarta Selatan</strong>, kami berkomitmen untuk terus menebar manfaat bagi masyarakat sekitar melalui program-program inovatif.
+                    </p>
+                </div>
+
+                <div class="row g-4 mt-2">
+                    <div class="col-6 col-md-4">
+                        <div class="p-3 card-custom text-center border-bottom border-primary border-3">
+                            <h3 class="fw-bold text-primary mb-0">2026</h3>
+                            <small class="text-uppercase fw-bold text-muted" style="font-size: 0.7rem;">Tahun Berdiri</small>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="p-3 border bg-white rounded-4 text-center shadow-sm">
-                            <h3 class="fw-bold text-primary mb-0">5+</h3>
-                            <small class="text-muted">Program Berjalan</small>
+                    <div class="col-6 col-md-4">
+                        <div class="p-3 card-custom text-center border-bottom border-primary border-3">
+                            <h3 class="fw-bold text-primary mb-0">20+</h3>
+                            <small class="text-uppercase fw-bold text-muted" style="font-size: 0.7rem;">Anggota Aktif</small>
                         </div>
                     </div>
                 </div>
@@ -240,63 +255,52 @@
     </div>
 </section>
 
-<section id="visimisi" class="py-5">
+<section id="visimisi" class="bg-light py-5">
     <div class="container">
       <div class="row g-5 align-items-center">
-        <div class="col-md-6 order-2 order-md-1">
-          <h6 class="text-primary fw-bold">ARAH GERAK</h6>
-          <h2 class="display-5 fw-bold mb-4">Visi & Misi Kami</h2>
-          <div class="d-flex mb-4 card border-0 bg-white p-3 shadow-sm">
-            <div class="d-flex align-items-start">
-              <i class="bi bi-rocket-takeoff-fill text-primary me-3 fs-3"></i>
+        <div class="col-md-6" data-aos="fade-up">
+          <h6 class="text-primary fw-bold text-uppercase">Our Purpose</h6>
+          <h2 class="display-5 fw-bold mb-5">Visi & Misi Strategis</h2>
+          
+          <div class="card-custom p-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="d-flex">
+              <div class="bg-primary text-white p-3 rounded-4 me-4">
+                <i class="bi bi-rocket-takeoff-fill fs-3"></i>
+              </div>
               <div>
-                  <h5 class="fw-bold">Visi</h5>
-                  <p class="text-muted mb-0">Mewujudkan generasi muda yang mandiri, tangguh, beriman, berkualitas, dan bertanggung jawab.</p>
+                <h5 class="fw-bold">Visi Utama</h5>
+                <p class="text-muted mb-0">Mewujudkan generasi muda yang mandiri, tangguh, beriman, dan berkualitas tinggi.</p>
               </div>
             </div>
           </div>
-          <div class="d-flex card border-0 bg-white p-3 shadow-sm">
-            <div class="d-flex align-items-start">
-              <i class="bi bi-shield-check text-primary me-3 fs-3"></i>
+
+          <div class="card-custom p-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="d-flex">
+            <div class="bg-primary text-white p-3 rounded-4 me-4">
+                <i class="bi bi-rocket-takeoff-fill fs-3"></i>
+              </div>
               <div>
-                  <h5 class="fw-bold">Misi</h5>
-                  <p class="text-muted mb-0">Menciptakan ekosistem kreatif, jiwa sosial tinggi, dan karakter kuat untuk lingkungan yang lebih baik.</p>
+                <h5 class="fw-bold">Misi Sosial</h5>
+                <p class="text-muted mb-0">Membangun ekosistem kreatif dan karakter kuat untuk lingkungan yang lebih berkelanjutan.</p>
               </div>
             </div>
           </div>
         </div>
         
-        <div class="col-md-6 order-1 order-md-2">
-            <div id="carouselVisiMisi" class="carousel slide shadow-lg" data-bs-ride="carousel" style="border-radius: 30px; overflow: hidden;">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselVisiMisi" data-bs-slide-to="0" class="active"></button>
-                  <button type="button" data-bs-target="#carouselVisiMisi" data-bs-slide-to="1"></button>
-                  <button type="button" data-bs-target="#carouselVisiMisi" data-bs-slide-to="2"></button>
-                  <button type="button" data-bs-target="#carouselVisiMisi" data-bs-slide-to="3"></button>
-                  <button type="button" data-bs-target="#carouselVisiMisi" data-bs-slide-to="4"></button>
-                </div>
+        <div class="col-md-6" data-aos="zoom-in">
+            <div id="carouselVisiMisi" class="carousel slide shadow-2xl" data-bs-ride="carousel" style="border-radius: 40px; overflow: hidden;">
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img/wallpaper1.jpg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Visi Misi 1">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/wallpaper2.jpg" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Visi Misi 2">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/wallpaper3.JPG" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Visi Misi 3">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/wallpaper4.JPG" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Visi Misi 4">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/wallpaper5.JPG" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Visi Misi 5">
-                  </div>
+                  <div class="carousel-item active"><img src="img/wallpaper1.jpg" class="d-block w-100" style="height: 450px; object-fit: cover;"></div>
+                  <div class="carousel-item"><img src="img/wallpaper2.jpg" class="d-block w-100" style="height: 450px; object-fit: cover;"></div>
+                  <div class="carousel-item"><img src="img/wallpaper3.JPG" class="d-block w-100" style="height: 450px; object-fit: cover;"></div>
+                  <div class="carousel-item"><img src="img/wallpaper4.JPG" class="d-block w-100" style="height: 450px; object-fit: cover;"></div>
+                  <div class="carousel-item"><img src="img/wallpaper5.JPG" class="d-block w-100" style="height: 450px; object-fit: cover;"></div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselVisiMisi" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="carousel-control-prev-icon p-3 bg-dark rounded-circle" style="width: 2rem; height: 2rem;"></span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselVisiMisi" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="carousel-control-next-icon p-3 bg-dark rounded-circle" style="width: 2rem; height: 2rem;"></span>
                 </button>
             </div>
         </div>
@@ -306,135 +310,137 @@
 
 <section id="struktur" class="py-5">
   <div class="container text-center">
-    <h2 class="fw-bold mb-2">Struktur Organisasi</h2>
-    <p class="text-muted mb-5">Klik pengurus untuk melihat detail profil mereka</p>
+    <h6 class="text-primary fw-bold text-uppercase" data-aos="fade-up">Team Member</h6>
+    <h2 class="display-5 fw-bold mb-5" data-aos="fade-up">Struktur Organisasi</h2>
     <div class="row g-4">
-      <div class="col-md-4">
-        <a href="struktur.html" class="card p-4 border-0 shadow-sm h-100">
-          <div class="avatar-wrapper mb-3"><img src="https://i.pravatar.cc/150?u=1" class="avatar-img" alt="Ketua"></div>
-          <h5 class="fw-bold">Sekti Darmawan</h5>
-          <p class="text-primary fw-bold">Ketua Umum</p>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <a href="struktur.html" class="text-decoration-none text-dark">
+            <div class="card-custom p-5">
+              <div class="avatar-wrapper mb-4"><img src="https://i.pravatar.cc/150?u=1" class="avatar-img" alt="Ketua"></div>
+              <h4 class="fw-bold mb-1">Sekti Darmawan</h4>
+              <p class="text-primary fw-bold">Ketua Umum</p>
+            </div>
         </a>
       </div>
-      <div class="col-md-4">
-        <a href="struktur.html" class="card p-4 border-0 shadow-sm h-100">
-          <div class="avatar-wrapper mb-3"><img src="img/foto.jpg" class="avatar-img" alt="Wakil"></div>
-          <h5 class="fw-bold">Ade Bagas</h5>
-          <p class="text-primary fw-bold">Wakil Ketua</p>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <a href="struktur.html" class="text-decoration-none text-dark">
+            <div class="card-custom p-5">
+              <div class="avatar-wrapper mb-4"><img src="img/foto.jpg" class="avatar-img" alt="Wakil"></div>
+              <h4 class="fw-bold mb-1">Ade Bagas</h4>
+              <p class="text-primary fw-bold">Wakil Ketua</p>
+            </div>
         </a>
       </div>
-      <div class="col-md-4">
-        <a href="struktur.html" class="card p-4 border-0 shadow-sm h-100">
-          <div class="avatar-wrapper mb-3"><img src="https://i.pravatar.cc/150?u=3" class="avatar-img" alt="Sekretaris"></div>
-          <h5 class="fw-bold">Siti Fatimah</h5>
-          <p class="text-primary fw-bold">Sekretaris</p>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <a href="struktur.html" class="text-decoration-none text-dark">
+            <div class="card-custom p-5">
+              <div class="avatar-wrapper mb-4"><img src="https://i.pravatar.cc/150?u=3" class="avatar-img" alt="Sekretaris"></div>
+              <h4 class="fw-bold mb-1">Siti Fatimah</h4>
+              <p class="text-primary fw-bold">Sekretaris</p>
+            </div>
         </a>
       </div>
     </div>
-    <div class="mt-5">
-        <a href="struktur.html" class="btn btn-primary rounded-pill px-5">Lihat Semua Pengurus</a>
+    <div class="mt-5" data-aos="fade-up">
+        <a href="struktur.html" class="btn btn-primary btn-modern shadow-lg">Lihat Seluruh Pengurus <i class="bi bi-arrow-right ms-2"></i></a>
     </div>
   </div>
 </section>
 
-<section id="program" class="py-5">
+<section id="program" class="bg-dark text-white py-5">
     <div class="container">
-      <div class="text-center mb-5">
-          <h2 class="fw-bold">Program Unggulan</h2>
-          <p class="text-muted">Inisiatif nyata untuk perubahan yang lebih baik.</p>
+      <div class="text-center mb-5" data-aos="fade-up">
+          <h6 class="text-primary fw-bold text-uppercase">Special Activities</h6>
+          <h2 class="display-5 fw-bold">Program Unggulan</h2>
       </div>
       <div class="row g-4">
-        <div class="col-md-4">
-          <a href="detail-program.html?p=edukasi" class="text-decoration-none h-100 d-block">
-              <div class="card program-card h-100 p-4 bg-primary text-white shadow">
-                <i class="bi bi-mortarboard fs-1 mb-3"></i>
-                <h4>Edukasi Digital</h4>
-                <p class="opacity-75">Pelatihan literasi digital dan beasiswa pemuda berprestasi.</p>
-                <small class="fw-bold">Klik untuk detail →</small>
-              </div>
-          </a>
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+            <div class="card card-custom h-100 p-4 bg-primary text-white border-0">
+                <div class="mb-3 text-white opacity-75"><i class="bi bi-mortarboard fs-1"></i></div>
+                <h4 class="fw-bold">Edukasi Digital</h4>
+                <p class="opacity-75 mb-4">Literasi digital untuk pemuda agar siap menghadapi tantangan era teknologi modern.</p>
+                <a href="detail-program.html?p=edukasi" class="btn btn-light btn-sm rounded-pill px-4 fw-bold">Pelajari →</a>
+            </div>
         </div>
-        <div class="col-md-4">
-          <a href="detail-program.html?p=umkm" class="text-decoration-none h-100 d-block">
-              <div class="card program-card h-100 p-4 bg-success text-white shadow">
-                <i class="bi bi-shop fs-1 mb-3"></i>
-                <h4>UMKM Kreatif</h4>
-                <p class="opacity-75">Pendampingan UMKM muda dan bazar bulanan.</p>
-                <small class="fw-bold">Klik untuk detail →</small>
-              </div>
-          </a>
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+            <div class="card card-custom h-100 p-4 bg-success text-white border-0">
+                <div class="mb-3 text-white opacity-75"><i class="bi bi-shop fs-1"></i></div>
+                <h4 class="fw-bold">UMKM Kreatif</h4>
+                <p class="opacity-75 mb-4">Pendampingan usaha mikro bagi pemuda kreatif untuk mandiri secara ekonomi.</p>
+                <a href="detail-program.html?p=umkm" class="btn btn-light btn-sm rounded-pill px-4 fw-bold">Pelajari →</a>
+            </div>
         </div>
-        <div class="col-md-4">
-          <a href="detail-program.html?p=green" class="text-decoration-none h-100 d-block">
-              <div class="card program-card h-100 p-4 bg-info text-white shadow">
-                <i class="bi bi-tree fs-1 mb-3"></i>
-                <h4>Green Project</h4>
-                <p class="opacity-75">Pengelolaan sampah terpadu dan penghijauan.</p>
-                <small class="fw-bold">Klik untuk detail →</small>
-              </div>
-          </a>
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="300">
+            <div class="card card-custom h-100 p-4 bg-info text-white border-0">
+                <div class="mb-3 text-white opacity-75"><i class="bi bi-tree fs-1"></i></div>
+                <h4 class="fw-bold">Green Project</h4>
+                <p class="opacity-75 mb-4">Inisiatif penghijauan dan pengelolaan sampah terpadu di lingkungan sekitar.</p>
+                <a href="detail-program.html?p=green" class="btn btn-light btn-sm rounded-pill px-4 fw-bold">Pelajari →</a>
+            </div>
         </div>
       </div>
     </div>
 </section>
 
 <section id="galeri" class="py-5">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-5">Dokumentasi Kegiatan</h2>
-    <div class="row g-3">
-      <div class="col-md-4">
-          <a href="galeri.html">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600" class="img-fluid rounded-4 gallery-item shadow-sm">
-          </a>
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+        <h6 class="text-primary fw-bold text-uppercase">Memories</h6>
+        <h2 class="display-5 fw-bold">Dokumentasi Kegiatan</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="gallery-container shadow-lg">
+            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600" class="gallery-item">
+          </div>
       </div>
-      <div class="col-md-4">
-          <a href="galeri.html">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600" class="img-fluid rounded-4 gallery-item shadow-sm">
-          </a>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="gallery-container shadow-lg">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600" class="gallery-item">
+          </div>
       </div>
-      <div class="col-md-4">
-          <a href="galeri.html">
-              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600" class="img-fluid rounded-4 gallery-item shadow-sm">
-          </a>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="gallery-container shadow-lg">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600" class="gallery-item">
+          </div>
       </div>
     </div>
-    <div class="mt-5">
-        <a href="galeri.html" class="btn btn-primary rounded-pill px-5 shadow-sm">Buka Galeri Selengkapnya <i class="bi bi-images ms-2"></i></a>
+    <div class="mt-5 text-center" data-aos="fade-up">
+        <a href="galeri.html" class="btn btn-outline-primary btn-modern">Buka Galeri Foto <i class="bi bi-images ms-2"></i></a>
     </div>
   </div>
 </section>
 
-<section id="sosmed" class="py-5"></section>
-<section class="py-5 bg-white border-top">
+<section id="sosmed" class="py-5 bg-white border-top">
     <div class="container text-center">
-        <h4 class="fw-bold mb-4">Terhubung Bersama Kami</h4>
-        <div class="d-flex justify-content-center gap-4">
-            <a href="https://www.instagram.com/kartar.subunit1108/" class="social-icon instagram shadow"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="social-icon facebook shadow"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="social-icon youtube shadow"><i class="bi bi-youtube"></i></a>
-            <a href="https://www.tiktok.com/@karangtaruna011.08" class="social-icon tiktok shadow"><i class="bi bi-tiktok"></i></a>
+        <h4 class="fw-bold mb-4" data-aos="fade-up">Terhubung Bersama Kami</h4>
+        <div class="d-flex justify-content-center gap-4" data-aos="fade-up">
+            <a href="https://www.instagram.com/kartar.subunit1108/" class="social-icon instagram shadow-lg" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon facebook shadow-lg" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon youtube shadow-lg" target="_blank"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.tiktok.com/@karangtaruna011.08" class="social-icon tiktok shadow-lg" target="_blank"><i class="bi bi-tiktok"></i></a>
         </div>
     </div>
 </section>
 
-<section id="lokasi" class="py-5">
+<section id="lokasi" class="py-5 bg-light">
     <div class="container">
-        <div class="row g-4 align-items-center">
-            <div class="col-lg-5">
-                <h6 class="text-primary fw-bold">LOKASI KAMI</h6>
-                <h2 class="fw-bold mb-4">Sekretariat Karang Taruna</h2>
-                <div class="card border-0 shadow-sm p-4 mb-3 bg-white">
-                    <div class="d-flex align-items-start">
-                        <i class="bi bi-geo-alt-fill text-primary fs-3 me-3"></i>
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-5" data-aos="fade-right">
+                <h6 class="text-primary fw-bold text-uppercase">Our Base</h6>
+                <h2 class="display-6 fw-bold mb-4">Kunjungi Sekretariat</h2>
+                <div class="card-custom p-4 mb-3 border-start border-primary border-5">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-geo-alt-fill text-primary fs-2 me-4"></i>
                         <div>
-                            <h5 class="fw-bold mb-1">Alamat Lengkap</h5>
-                            <p class="text-muted mb-0">Jl. Raya Tanjung Barat Gg. Langgar, Kelurahan Pejaten Timur, DKI Jakarta 12510</p>
+                            <h5 class="fw-bold mb-1">Alamat</h5>
+                            <p class="text-muted mb-0">Jl. Raya Tanjung Barat Gg. Langgar 1, Pejaten Timur, Pasar Minggu, Jakarta Selatan.</p>
                         </div>
                     </div>
                 </div>
-                <div class="card border-0 shadow-sm p-4 bg-white">
-                    <div class="d-flex align-items-start">
-                        <i class="bi bi-clock-fill text-primary fs-4 me-3"></i>
+                <div class="card-custom p-4 border-start border-accent border-5">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-clock-fill text-accent fs-2 me-4"></i>
                         <div>
                             <h5 class="fw-bold mb-1">Jam Operasional</h5>
                             <p class="text-muted mb-0">Sabtu - Minggu: 10.00 - 17.00 WIB</p>
@@ -442,39 +448,43 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-7">
-                <div class="map-container shadow">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.8035221439573!2d106.83940468591182!3d-6.289536145299799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f272929a0309%3A0x52a75afd73d1b9c2!2sGg.%20Langgar%201%2C%20Ps.%20Minggu%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012510!5e0!3m2!1sid!2sid!4v1770542321486!5m2!1sid!2sid" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
-                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15862.9038222629!2d106.840!3d-6.299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTcnNTYuNCJTIDEwNsKwNTAnMjQuMCJF!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" 
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="interaktif" class="py-5 text-white">
+<section id="interaktif" class="py-5 text-white" style="background: var(--gradient-1);">
   <div class="container">
-    <div class="row g-5">
-      <div class="col-md-5">
-        <h2 class="display-6 fw-bold mb-4">Suara Pemuda</h2>
-        <p class="lead text-white-50">Ingin bergabung atau punya keluhan lingkungan? Kirim pesan Anda sekarang.</p>
-        <div class="alert bg-primary border-0 text-white mt-4">
-          <i class="bi bi-whatsapp me-2"></i> Fast response via WhatsApp otomatis.
+    <div class="row g-5 align-items-center">
+      <div class="col-md-5" data-aos="fade-up">
+        <h2 class="display-4 fw-bold mb-4">Suara Pemuda</h2>
+        <p class="lead text-white-50">Sampaikan aspirasi, pengaduan, atau bergabunglah menjadi bagian dari perubahan.</p>
+        <div class="d-flex align-items-center mt-5">
+            <div class="bg-white text-primary p-3 rounded-circle me-3">
+                <i class="bi bi-whatsapp fs-3"></i>
+            </div>
+            <div>
+                <h6 class="mb-0">Fast Response</h6>
+                <small class="opacity-75">Terkoneksi langsung ke admin</small>
+            </div>
         </div>
       </div>
-      <div class="col-md-7">
-        <div class="card p-4 shadow-lg border-0 bg-white text-dark">
+      <div class="col-md-7" data-aos="zoom-in-left">
+        <div class="card-custom p-5 shadow-2xl">
           <form id="whatsappForm">
             <div class="row g-3">
                 <div class="col-md-6 mb-3">
                     <label class="form-label fw-bold">Nama Lengkap</label>
-                    <input type="text" id="name" class="form-control form-control-lg bg-light" placeholder="Masukkan nama..." required>
+                    <input type="text" id="name" class="form-control form-control-lg border-0 bg-light" placeholder="Nama Anda..." required>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label class="form-label fw-bold">Tujuan</label>
-                    <select id="type" class="form-select form-control-lg bg-light">
+                    <select id="type" class="form-select form-control-lg border-0 bg-light">
                         <option value="Daftar Anggota">Daftar Anggota Baru</option>
                         <option value="Pengaduan">Pengaduan Masyarakat</option>
                         <option value="Saran">Kritik & Saran</option>
@@ -483,9 +493,9 @@
             </div>
             <div class="mb-4">
               <label class="form-label fw-bold">Isi Pesan</label>
-              <textarea id="message" class="form-control bg-light" rows="4" placeholder="Tuliskan detail pesan Anda..." required></textarea>
+              <textarea id="message" class="form-control border-0 bg-light" rows="4" placeholder="Apa yang ingin disampaikan?" required></textarea>
             </div>
-            <button type="button" onclick="sendToWhatsapp()" class="btn btn-primary w-100 py-3 rounded-pill fw-bold shadow">
+            <button type="button" onclick="sendToWhatsapp()" class="btn btn-primary btn-lg w-100 btn-modern shadow">
                 Kirim via WhatsApp <i class="bi bi-send ms-2"></i>
             </button>
           </form>
@@ -495,35 +505,48 @@
   </div>
 </section>
 
-<footer class="bg-black py-4 text-center border-top border-secondary">
-  <p class="mb-0 text-secondary">© 2026 <strong>Karang Taruna Langgar Satu</strong>. Digitalizing Youth Community.</p>
+<footer class="bg-dark py-5 text-center text-white-50">
+  <div class="container">
+      <img src="img/logo.png" style="height: 60px;" alt="Logo" class="mb-4 grayscale">
+      <p class="mb-0">© 2026 <strong class="text-white">Karang Taruna Langgar Satu</strong>. Digitalizing Youth Community.</p>
+      <small>Dibuat dengan ❤️ untuk kemajuan pemuda Indonesia.</small>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
+    // Initialize Animations
+    AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-in-out'
+    });
+
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            document.querySelector('.navbar').classList.add('scrolled', 'shadow-sm');
+        } else {
+            document.querySelector('.navbar').classList.remove('scrolled', 'shadow-sm');
+        }
+    });
+
     function sendToWhatsapp() {
         const name = document.getElementById('name').value;
         const type = document.getElementById('type').value;
         const message = document.getElementById('message').value;
         
         if(!name || !message) {
-            alert('Harap isi nama dan pesan Anda.');
+            alert('Harap lengkapi nama dan pesan Anda.');
             return;
         }
         const phoneNumber = "6289618197701"; 
-        const text = `Halo Admin Katar Langgar Satu!%0A%0A*Nama:* ${name}%0A*Kategori:* ${type}%0A*Pesan:* ${message}`;
+        const text = `*HALO ADMIN KATAR LANGGAR SATU*%0A%0A*Pengirim:* ${name}%0A*Tujuan:* ${type}%0A*Pesan:* ${message}`;
         const url = `https://wa.me/${phoneNumber}?text=${text}`;
         window.open(url, '_blank').focus();
     }
-
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            document.querySelector('.navbar').classList.add('py-2', 'shadow');
-        } else {
-            document.querySelector('.navbar').classList.remove('py-2', 'shadow');
-        }
-    });
 </script>
 
 </body>
