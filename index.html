@@ -61,7 +61,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* --- Section Styling --- */
         section { padding: 100px 0; }
         
         .dot-pattern {
@@ -69,7 +68,6 @@
             background-size: 25px 25px;
         }
 
-        /* --- Cards & Glassmorphism --- */
         .card-custom {
             border: none;
             border-radius: 24px;
@@ -83,11 +81,11 @@
         }
 
         .avatar-wrapper {
-            width: 100%; /* Mengikuti lebar kolom */
-            max-width: 200px; /* Batas lebar maksimal */
-            aspect-ratio: 3 / 4; /* Rasio portrait standar */
+            width: 100%;
+            max-width: 200px;
+            aspect-ratio: 3 / 4;
             margin: 0 auto 1.5rem;
-            border-radius: 20px; /* Sudut melengkung, bukan lingkaran */
+            border-radius: 20px;
             padding: 5px;
             background: var(--gradient-1);
             position: relative;
@@ -96,12 +94,11 @@
         .avatar-img {
             width: 100%;
             height: 100%;
-            border-radius: 15px; /* Menyesuaikan dengan wrapper */
-            object-fit: cover; /* Memastikan foto tidak gepeng */
+            border-radius: 15px;
+            object-fit: cover;
             border: 2px solid white;
         }
 
-        /* --- Gallery Hover --- */
         .gallery-container { position: relative; overflow: hidden; border-radius: 20px; }
         .gallery-item {
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -111,7 +108,6 @@
         }
         .gallery-container:hover .gallery-item { transform: scale(1.1); }
 
-        /* --- Social Icons Custom Colors --- */
         .social-icon {
             width: 55px;
             height: 55px;
@@ -131,35 +127,41 @@
         .youtube { background: #FF0000; }
         .tiktok { background: #000000; }
 
-/* --- Map Canvas --- */
-.map-wrapper {
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-    /* transform: rotate(-1deg); <-- Baris ini sudah dihapus/dinonaktifkan agar tidak miring */
-}
+        .map-wrapper {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
 
-        /* --- Floating Button --- */
         .btn-modern {
             padding: 14px 35px;
             border-radius: 50px;
             font-weight: 700;
             letter-spacing: 0.5px;
             transition: all 0.3s;
+        }
 
-            /* Tambahkan atau perbarui class ini di dalam tag <style> */
-.text-justify {
-    text-align: justify;
-    text-justify: inter-word;
-}
+        .text-justify {
+            text-align: justify;
+            text-justify: inter-word;
+        }
 
-.section-title-line {
-    height: 3px;
-    width: 60px;
-    background: var(--gradient-1);
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
+        .section-title-line {
+            height: 3px;
+            width: 60px;
+            background: var(--gradient-1);
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        /* Nav Pills Custom */
+        .nav-pills .nav-link.active {
+            background: var(--gradient-1);
+            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.2);
+        }
+        .nav-pills .nav-link {
+            color: var(--primary);
+            font-weight: 600;
         }
     </style>
 </head>
@@ -182,12 +184,13 @@
           <ul class="dropdown-menu border-0 shadow-lg p-3" style="border-radius: 15px;">
             <li><a class="dropdown-item rounded-3" href="#sejarah">Sejarah & Profil</a></li> 
             <li><a class="dropdown-item rounded-3" href="#visimisi">Visi & Misi</a></li>
-            <li><a class="dropdown-item rounded-3" href="#struktur">Struktur Organisasi</a></li>
+            <li><a class="dropdown-item rounded-3" href="#values">Nilai Kami</a></li>
+            <li><a class="dropdown-item rounded-3" href="#struktur">Struktur</a></li>
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link px-3 fw-600" href="#program">Program</a></li>
         <li class="nav-item"><a class="nav-link px-3 fw-600" href="#galeri">Galeri</a></li>
-        <li class="nav-item"><a class="nav-link px-3 fw-600" href="#sosmed">Media</a></li>
+        <li class="nav-item"><a class="nav-link px-3 fw-600" href="#faq">Tanya Jawab</a></li>
         <li class="nav-item ms-lg-4"><a class="btn btn-primary btn-modern shadow" href="#interaktif">Hubungi Kami</a></li>
       </ul>
     </div>
@@ -211,44 +214,31 @@
         <div class="row align-items-center">
             <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
                 <div class="position-relative">
-                    <img src="img/logo.png" class="img-fluid rounded-5 shadow-lg position-relative z-1 p-4 bg-white" alt="Logo Dharmaning Muda">
+                    <img src="img/logo.png" class="img-fluid rounded-5 shadow-lg position-relative z-1 p-4 bg-white" alt="Logo">
                     <div class="position-absolute bg-primary rounded-5" style="top: -20px; left: -20px; width: 100%; height: 100%; z-index: 0; opacity: 0.1;"></div>
                 </div>
             </div>
-
             <div class="col-lg-7 ps-lg-5" data-aos="fade-left">
                 <h6 class="text-primary fw-bold text-uppercase mb-2">Our Legacy</h6>
                 <h2 class="display-5 fw-bold mb-3">Sejarah & Pengertian <br><span class="text-primary text-gradient">Dharmaning Muda</span></h2>
                 <div class="section-title-line"></div>
-                
                 <div class="text-justify mb-4">
                     <p class="text-muted fs-5 fw-bold mb-2">Apa itu Karang Taruna?</p>
-                    <p class="text-muted">
-                        Karang Taruna adalah wadah pengembangan generasi muda yang tumbuh atas dasar kesadaran dan tanggung jawab sosial. Nama <strong>"Dharmaning Muda"</strong> diambil dari bahasa Sanskerta, di mana <em>Dharma</em> berarti pengabdian dan <em>Muda</em> merujuk pada pemuda. Secara utuh, ia melambangkan <strong>"Pengabdian Utama Sang Pemuda"</strong>.
-                    </p>
-                    
+                    <p class="text-muted">Karang Taruna adalah wadah pengembangan generasi muda yang tumbuh atas dasar kesadaran dan tanggung jawab sosial. Nama <strong>"Dharmaning Muda"</strong> diambil dari bahasa Sanskerta, di mana <em>Dharma</em> berarti pengabdian dan <em>Muda</em> merujuk pada pemuda.</p>
                     <p class="text-muted fs-5 fw-bold mb-2">Perjalanan Kami</p>
-                    <p class="text-muted">
-                        Didirikan sejak tahun <strong>2026</strong>, Karang Taruna Langgar Satu telah menjadi pilar kreativitas di Pejaten Timur. Berawal dari gerakan kepemudaan lokal, kini kami bertransformasi menjadi organisasi modern yang adaptif terhadap teknologi tanpa meninggalkan nilai gotong royong.
-                    </p>
-
-                    <p class="text-muted fs-5 fw-bold mb-2">Lokasi Strategis</p>
-                    <p class="text-muted">
-                        Berpusat di <strong>Jl. Raya Tanjung Barat Gg. Langgar 1, Pejaten Timur, Pasar Minggu, Jakarta Selatan</strong>, kami berkomitmen untuk terus menebar manfaat bagi masyarakat sekitar melalui program-program inovatif.
-                    </p>
+                    <p class="text-muted">Didirikan sejak tahun <strong>2026</strong>, Karang Taruna Langgar Satu telah menjadi pilar kreativitas di Pejaten Timur. Berawal dari gerakan lokal, kini bertransformasi menjadi organisasi modern yang adaptif teknologi.</p>
                 </div>
-
-                <div class="row g-4 mt-2">
+                <div class="row g-4">
                     <div class="col-6 col-md-4">
                         <div class="p-3 card-custom text-center border-bottom border-primary border-3">
                             <h3 class="fw-bold text-primary mb-0">2026</h3>
-                            <small class="text-uppercase fw-bold text-muted" style="font-size: 0.7rem;">Tahun Berdiri</small>
+                            <small class="text-uppercase fw-bold text-muted">Tahun Berdiri</small>
                         </div>
                     </div>
                     <div class="col-6 col-md-4">
                         <div class="p-3 card-custom text-center border-bottom border-primary border-3">
                             <h3 class="fw-bold text-primary mb-0">20+</h3>
-                            <small class="text-uppercase fw-bold text-muted" style="font-size: 0.7rem;">Anggota Aktif</small>
+                            <small class="text-uppercase fw-bold text-muted">Anggota Aktif</small>
                         </div>
                     </div>
                 </div>
@@ -257,15 +247,51 @@
     </div>
 </section>
 
-<section id="visimisi" class="bg-light py-5">
+<section id="values" class="py-5 bg-light">
+    <div class="container text-center">
+        <h6 class="text-primary fw-bold text-uppercase" data-aos="fade-up">Our Philosophy</h6>
+        <h2 class="display-5 fw-bold mb-5" data-aos="fade-up">Nilai-Nilai Utama Kami</h2>
+        <div class="row g-4">
+            <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card-custom p-4 border-top border-primary border-4 h-100">
+                    <i class="bi bi-people-fill fs-1 text-primary mb-3"></i>
+                    <h5 class="fw-bold">Solidaritas</h5>
+                    <p class="text-muted small">Membangun ikatan persaudaraan yang kuat antar pemuda di lingkungan Langgar Satu.</p>
+                </div>
+            </div>
+            <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card-custom p-4 border-top border-primary border-4 h-100">
+                    <i class="bi bi-lightbulb-fill fs-1 text-primary mb-3"></i>
+                    <h5 class="fw-bold">Inovasi</h5>
+                    <p class="text-muted small">Berani mencoba hal baru dan beradaptasi dengan perkembangan teknologi digital.</p>
+                </div>
+            </div>
+            <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+                <div class="card-custom p-4 border-top border-primary border-4 h-100">
+                    <i class="bi bi-heart-pulse-fill fs-1 text-primary mb-3"></i>
+                    <h5 class="fw-bold">Empati Sosial</h5>
+                    <p class="text-muted small">Menjadi garda terdepan dalam membantu sesama warga yang membutuhkan.</p>
+                </div>
+            </div>
+            <div class="col-md-3" data-aos="zoom-in" data-aos-delay="400">
+                <div class="card-custom p-4 border-top border-primary border-4 h-100">
+                    <i class="bi bi-trophy-fill fs-1 text-primary mb-3"></i>
+                    <h5 class="fw-bold">Prestasi</h5>
+                    <p class="text-muted small">Mendorong setiap anggota untuk meraih potensi terbaik mereka di bidangnya.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="visimisi" class="py-5">
     <div class="container">
       <div class="row g-5 align-items-center">
         <div class="col-md-6" data-aos="fade-up">
           <h6 class="text-primary fw-bold text-uppercase">Our Purpose</h6>
           <h2 class="display-5 fw-bold mb-5">Visi & Misi Strategis</h2>
-          
-          <div class="card-custom p-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="d-flex">
+          <div class="card-custom p-4 mb-4">
+            <div class="d-flex align-items-start">
               <div class="bg-primary text-white p-3 rounded-4 me-4">
                 <i class="bi bi-rocket-takeoff-fill fs-3"></i>
               </div>
@@ -275,11 +301,10 @@
               </div>
             </div>
           </div>
-
-          <div class="card-custom p-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="d-flex">
-            <div class="bg-primary text-white p-3 rounded-4 me-4">
-                <i class="bi bi-rocket-takeoff-fill fs-3"></i>
+          <div class="card-custom p-4">
+            <div class="d-flex align-items-start">
+              <div class="bg-primary text-white p-3 rounded-4 me-4">
+                <i class="bi bi-shield-check fs-3"></i>
               </div>
               <div>
                 <h5 class="fw-bold">Misi Sosial</h5>
@@ -288,25 +313,52 @@
             </div>
           </div>
         </div>
-        
         <div class="col-md-6" data-aos="zoom-in">
-            <div id="carouselVisiMisi" class="carousel slide shadow-2xl" data-bs-ride="carousel" style="border-radius: 40px; overflow: hidden;">
+            <div id="carouselVisiMisi" class="carousel slide shadow-lg" data-bs-ride="carousel" style="border-radius: 40px; overflow: hidden;">
                 <div class="carousel-inner">
                   <div class="carousel-item active"><img src="img/wallpaper1.jpg" class="d-block w-100" style="height: 450px; object-fit: cover;"></div>
                   <div class="carousel-item"><img src="img/wallpaper2.jpg" class="d-block w-100" style="height: 450px; object-fit: cover;"></div>
-                  <div class="carousel-item"><img src="img/wallpaper3.JPG" class="d-block w-100" style="height: 450px; object-fit: cover;"></div>
-                  <div class="carousel-item"><img src="img/wallpaper4.JPG" class="d-block w-100" style="height: 450px; object-fit: cover;"></div>
-                  <div class="carousel-item"><img src="img/wallpaper5.JPG" class="d-block w-100" style="height: 450px; object-fit: cover;"></div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselVisiMisi" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon p-3 bg-dark rounded-circle" style="width: 2rem; height: 2rem;"></span>
+                    <span class="carousel-control-prev-icon p-3 bg-dark rounded-circle"></span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselVisiMisi" data-bs-slide="next">
-                    <span class="carousel-control-next-icon p-3 bg-dark rounded-circle" style="width: 2rem; height: 2rem;"></span>
+                    <span class="carousel-control-next-icon p-3 bg-dark rounded-circle"></span>
                 </button>
             </div>
         </div>
       </div>
+    </div>
+</section>
+
+<section id="testimonial" class="py-5 bg-light">
+    <div class="container">
+        <div id="carouselTesti" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner text-center">
+                <div class="carousel-item active">
+                    <div class="mx-auto shadow-sm p-5 bg-white rounded-5" style="max-width: 800px;">
+                        <i class="bi bi-quote fs-1 text-primary"></i>
+                        <p class="fs-5 italic mb-4">"Karang Taruna Langgar Satu adalah wadah yang luar biasa. Anak-anak muda di sini tidak hanya kumpul-kumpul, tapi benar-benar menciptakan solusi digital bagi warga."</p>
+                        <h6 class="fw-bold mb-0">H. Ahmad Fauzi</h6>
+                        <small class="text-primary text-uppercase">Tokoh Masyarakat</small>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="mx-auto shadow-sm p-5 bg-white rounded-5" style="max-width: 800px;">
+                        <i class="bi bi-quote fs-1 text-primary"></i>
+                        <p class="fs-5 italic mb-4">"Saya belajar banyak tentang desain grafis dan manajemen organisasi di sini. Katar Langgar Satu benar-benar membantu pemuda berkembang."</p>
+                        <h6 class="fw-bold mb-0">Rina Asyifa</h6>
+                        <small class="text-primary text-uppercase">Anggota Aktif</small>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselTesti" data-bs-slide="prev">
+                <i class="bi bi-chevron-left text-dark fs-2"></i>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselTesti" data-bs-slide="next">
+                <i class="bi bi-chevron-right text-dark fs-2"></i>
+            </button>
+        </div>
     </div>
 </section>
 
@@ -343,9 +395,9 @@
         </a>
       </div>
     </div>
-    <div class="mt-5" data-aos="fade-up">
+     <div class="mt-5" data-aos="fade-up">
+
         <a href="struktur.html" class="btn btn-primary btn-modern shadow-lg">Lihat Seluruh Pengurus <i class="bi bi-arrow-right ms-2"></i></a>
-    </div>
   </div>
 </section>
 
@@ -381,15 +433,35 @@
             </div>
         </div>
       </div>
+
+      <div class="mt-5 pt-5">
+        <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab" role="tablist">
+            <li class="nav-item"><button class="nav-link active rounded-pill px-4 mx-2" data-bs-toggle="pill" data-bs-target="#harian">Harian</button></li>
+            <li class="nav-item"><button class="nav-link rounded-pill px-4 mx-2 text-white" data-bs-toggle="pill" data-bs-target="#bulanan">Bulanan</button></li>
+            <li class="nav-item"><button class="nav-link rounded-pill px-4 mx-2 text-white" data-bs-toggle="pill" data-bs-target="#tahunan">Tahunan</button></li>
+        </ul>
+        <div class="tab-content card-custom p-4 text-dark" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="harian">
+                <h5 class="fw-bold"><i class="bi bi-calendar-event me-2 text-primary"></i>Rutinitas Harian</h5>
+                <p class="text-muted">Koordinasi melalui kanal digital, pengelolaan konten media sosial, dan layanan informasi lingkungan via WhatsApp Group.</p>
+            </div>
+            <div class="tab-pane fade" id="bulanan">
+                <h5 class="fw-bold"><i class="bi bi-calendar-month me-2 text-primary"></i>Agenda Bulanan</h5>
+                <p class="text-muted">Rapat koordinasi pengurus serta bakti sosial kebersihan lingkungan RT/RW.</p>
+            </div>
+            <div class="tab-pane fade" id="tahunan">
+                <h5 class="fw-bold"><i class="bi bi-calendar-check me-2 text-primary"></i>Event Tahunan</h5>
+                <p class="text-muted">Perayaan HUT RI, Festival Pemuda Kreatif, Laporan Pertanggungjawaban, dan Musyawarah Anggota tahunan.</p>
+            </div>
+        </div>
+      </div>
     </div>
 </section>
 
 <section id="galeri" class="py-5">
-  <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up">
-        <h6 class="text-primary fw-bold text-uppercase">Memories</h6>
-        <h2 class="display-5 fw-bold">Dokumentasi Kegiatan</h2>
-    </div>
+  <div class="container text-center">
+    <h6 class="text-primary fw-bold text-uppercase">Memories</h6>
+    <h2 class="display-5 fw-bold mb-5">Dokumentasi Kegiatan</h2>
     <div class="row g-4">
       <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="gallery-container shadow-lg">
@@ -407,10 +479,41 @@
           </div>
       </div>
     </div>
-    <div class="mt-5 text-center" data-aos="fade-up">
+     <div class="mt-5 text-center" data-aos="fade-up">
+
         <a href="galeri.html" class="btn btn-outline-primary btn-modern">Buka Galeri Foto <i class="bi bi-images ms-2"></i></a>
+
     </div>
   </div>
+</section>
+
+<section id="faq" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h6 class="text-primary fw-bold text-uppercase">FAQ</h6>
+            <h2 class="display-5 fw-bold">Tanya Jawab Umum</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="accordion accordion-flush" id="accordionFAQ">
+                    <div class="accordion-item card-custom mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+                                Bagaimana cara bergabung menjadi anggota?
+                            </button>
+                        </h2>
+                        <div id="q1" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body text-muted">
+                                Kamu bisa mendaftar secara online melalui form "Hubungi Kami" di bawah dengan memilih tujuan "Daftar Anggota Baru" atau datang langsung ke sekretariat saat jam operasional.
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="sosmed" class="py-5 bg-white border-top">
@@ -426,130 +529,257 @@
 </section>
 
 <section id="lokasi" class="py-5 bg-light">
+
     <div class="container">
+
         <div class="row g-5 align-items-center">
+
             <div class="col-lg-5" data-aos="fade-right">
+
                 <h6 class="text-primary fw-bold text-uppercase">Our Base</h6>
+
                 <h2 class="display-6 fw-bold mb-4">Kunjungi Sekretariat</h2>
+
                 <div class="card-custom p-4 mb-3 border-start border-primary border-5">
+
                     <div class="d-flex align-items-center">
+
                         <i class="bi bi-geo-alt-fill text-primary fs-2 me-4"></i>
+
                         <div>
+
                             <h5 class="fw-bold mb-1">Alamat</h5>
+
                             <p class="text-muted mb-0">Jl. Raya Tanjung Barat Gg. Langgar 1, Pejaten Timur, Pasar Minggu, Jakarta Selatan.</p>
+
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="card-custom p-4 border-start border-accent border-5">
+
                     <div class="d-flex align-items-center">
+
                         <i class="bi bi-clock-fill text-accent fs-2 me-4"></i>
+
                         <div>
+
                             <h5 class="fw-bold mb-1">Jam Operasional</h5>
+
                             <p class="text-muted mb-0">Sabtu - Minggu: 10.00 - 17.00 WIB</p>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
             <div class="col-lg-7" data-aos="fade-left">
+
                 <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15862.9038222629!2d106.840!3d-6.299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTcnNTYuNCJTIDEwNsKwNTAnMjQuMCJF!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" 
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15862.9038222629!2d106.840!3d-6.299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTcnNTYuNCJTIDEwNsKwNTAnMjQuMCJF!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid"
+
                             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
+
+
 
 <section id="interaktif" class="py-5 text-white" style="background: var(--gradient-1);">
+
   <div class="container">
+
     <div class="row g-5 align-items-center">
+
       <div class="col-md-5" data-aos="fade-up">
+
         <h2 class="display-4 fw-bold mb-4">Suara Pemuda</h2>
+
         <p class="lead text-white-50">Sampaikan aspirasi, pengaduan, atau bergabunglah menjadi bagian dari perubahan.</p>
+
         <div class="d-flex align-items-center mt-5">
+
             <div class="bg-white text-primary p-3 rounded-circle me-3">
+
                 <i class="bi bi-whatsapp fs-3"></i>
+
             </div>
+
             <div>
+
                 <h6 class="mb-0">Fast Response</h6>
+
                 <small class="opacity-75">Terkoneksi langsung ke admin</small>
+
             </div>
+
         </div>
+
       </div>
+
       <div class="col-md-7" data-aos="zoom-in-left">
+
         <div class="card-custom p-5 shadow-2xl">
+
           <form id="whatsappForm">
+
             <div class="row g-3">
+
                 <div class="col-md-6 mb-3">
+
                     <label class="form-label fw-bold">Nama Lengkap</label>
+
                     <input type="text" id="name" class="form-control form-control-lg border-0 bg-light" placeholder="Nama Anda..." required>
+
                 </div>
+
                 <div class="col-md-6 mb-3">
+
                     <label class="form-label fw-bold">Tujuan</label>
+
                     <select id="type" class="form-select form-control-lg border-0 bg-light">
+
                         <option value="Daftar Anggota">Daftar Anggota Baru</option>
+
                         <option value="Pengaduan">Pengaduan Masyarakat</option>
+
                         <option value="Saran">Kritik & Saran</option>
+
                     </select>
+
                 </div>
+
             </div>
+
             <div class="mb-4">
+
               <label class="form-label fw-bold">Isi Pesan</label>
+
               <textarea id="message" class="form-control border-0 bg-light" rows="4" placeholder="Apa yang ingin disampaikan?" required></textarea>
+
             </div>
+
             <button type="button" onclick="sendToWhatsapp()" class="btn btn-primary btn-lg w-100 btn-modern shadow">
+
                 Kirim via WhatsApp <i class="bi bi-send ms-2"></i>
+
             </button>
+
           </form>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
+
+
 <footer class="bg-dark py-5 text-center text-white-50">
+
   <div class="container">
+
       <img src="img/logo.png" style="height: 60px;" alt="Logo" class="mb-4 grayscale">
+
       <p class="mb-0">© 2026 <strong class="text-white">Karang Taruna Langgar Satu</strong>. Digitalizing Youth Community.</p>
+
       <small>Dibuat dengan ❤️ untuk kemajuan pemuda Indonesia.</small>
+
   </div>
+
 </footer>
 
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+
+
 <script>
+
     // Initialize Animations
+
     AOS.init({
+
         duration: 1000,
+
         once: true,
+
         easing: 'ease-in-out'
+
     });
+
+
 
     // Navbar Scroll Effect
+
     window.addEventListener('scroll', function() {
+
         if (window.scrollY > 100) {
+
             document.querySelector('.navbar').classList.add('scrolled', 'shadow-sm');
+
         } else {
+
             document.querySelector('.navbar').classList.remove('scrolled', 'shadow-sm');
+
         }
+
     });
 
+
+
     function sendToWhatsapp() {
+
         const name = document.getElementById('name').value;
+
         const type = document.getElementById('type').value;
+
         const message = document.getElementById('message').value;
-        
+
+       
+
         if(!name || !message) {
+
             alert('Harap lengkapi nama dan pesan Anda.');
+
             return;
+
         }
-        const phoneNumber = "6289618197701"; 
+
+        const phoneNumber = "6289618197701";
+
         const text = `*HALO ADMIN KATAR LANGGAR SATU*%0A%0A*Pengirim:* ${name}%0A*Tujuan:* ${type}%0A*Pesan:* ${message}`;
+
         const url = `https://wa.me/${phoneNumber}?text=${text}`;
+
         window.open(url, '_blank').focus();
+
     }
+
 </script>
 
+
+
 </body>
+
 </html>
